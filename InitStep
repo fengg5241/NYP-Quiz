@@ -1,0 +1,23 @@
+1 $ npm init
+2 $ npm install express --save
+
+const express = require('express')
+const app = express()
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(3000, () => console.log('Example app listening on port 3000!'))
+
+3 $ npm install express-generator -g
+express -h
+$ express --view=ejs quizAdmin
+
+4 npm install
+
+5  
+On MacOS or Linux, run the app with this command:
+
+$ DEBUG=myapp:* npm start
+On Windows, use this command:
+
+> set DEBUG=myapp:* & npm start
