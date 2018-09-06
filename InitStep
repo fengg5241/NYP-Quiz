@@ -28,3 +28,7 @@ On Windows, use this command:
 app.engine('html', require('hjs').renderFile);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
+
+
+导航需要ng-route
+并且要在app导入
