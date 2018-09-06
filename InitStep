@@ -21,3 +21,10 @@ $ DEBUG=myapp:* npm start
 On Windows, use this command:
 
 > set DEBUG=myapp:* & npm start
+
+
+6 
+// view engine setup
+app.engine('html', require('hjs').renderFile);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
