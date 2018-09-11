@@ -38,3 +38,18 @@ app.set('view engine', 'html');
 npm install -g @angular/cli
 ng new my-app
 
+ng generate module app-routing --flat --module=app
+
+TSLint
+Auto Import
+Angular v5 Snippets
+
+
+npm install bootstrap@latest
+
+npm i jquery@1.9.1 popper.js@^1.14.3
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+
+
