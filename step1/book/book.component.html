@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Book List</h1>
+
+  <a [routerLink]="['/book-create']" class="btn btn-default btn-lg">
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  </a>
+
+  <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="selectedCategory">
+    <option value="">Please Select</option> //此处用的是value，而不是[value]
+    <option *ngFor="let item of categories" [value]='item.id'>{{item.name}}</option>  
+  </select>
+  <button type="button" class="btn btn-primary" (click)="getSelectedCategory()">Primary</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Author</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of books">
+        <td>{{ book.name }}</td>
+        <td>{{ book.author }}</td>
+        <td><a
+          routerLink="/book-details/{{book.id}}">show detail</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
