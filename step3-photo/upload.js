@@ -5,8 +5,21 @@ var router = express.Router();
 var multer = require('multer');
 // set the directory for the uploads to the uploaded to
 var DIR = '../uploads/';
+
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './uploads/')
+  },
+  filename: function (req, file, cb) {
+    // let ext = file.originalname.substring(file.originalname.lastIndexOf('.'), file.originalname.length);
+    cb(null, Date.now() + "-"+file.originalname);
+  }
+})
+
 //define the type of upload multer would be doing and pass in its destination, in our case, its a single file with the name photo
-var upload = multer({dest: DIR}).single('photo');
+var upload = multer({storage: storage}).single('photo');
+
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
