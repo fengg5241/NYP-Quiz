@@ -2,3 +2,24 @@ https://codeday.me/bug/20180124/123987.html
 
 https://github.com/demopark/sequelize-docs-Zh-CN/blob/master/associations.md
 
+var association = [{
+    association: userCompain.belongsTo(Users, 
+        {foreignKey:'user_id', 
+        as:'user',
+        scope: {
+            idxRegion: 1
+          }})
+}]
+
+// http://localhost:3000/users/test
+router.get('/test', function(req, res, next) {
+    userCompain.findAll({
+        where: {campaign_id:9},
+        order: [
+            ['points', 'desc']
+          ],
+        include:association
+    }).then(function(questions) {
+        res.status(200).json(questions);
+  });
+  });
